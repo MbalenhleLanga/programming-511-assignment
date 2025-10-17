@@ -1,0 +1,73 @@
+class Product:
+    def __init__(self, id, name, category, quantity, price):
+        self.id = id
+        self.name = name
+        self.category = category
+        self.quantity = quantity
+        self.price = price
+
+class Inventory:
+    def __init__(self, filename):
+        self.filename = filename
+        self.products = self.load_products()
+
+        def load_products(self):
+            if not os.path.exists(self.filename):
+                with open(self.filename, 'w') as f:
+                    f.write("1, Sample Product, Electronics, 10, 100.0/n")
+                    f.write("2, Another Product, Clothing, 20, 50.0 /n")
+
+                    products = []
+                    with open(self.filename, 'r') as f:
+                        for line in f.readlines():
+                            id, name, category, quantity, price = line.strip().split(',')
+                            products.append(Product(id, name, category, int(quantity), float(price)))
+                            return products
+                        def save_products(self):
+                            with open(self.filename, 'w') as f:
+                                for product in self.products:
+                         f.write(f"{product.id}, {product.name},{product.category},{product.quantity},{product.price}/n")
+                        
+                        def add_product(self):
+                            id = input("Enter product ID:")
+                            name = input("Enter product name:")
+                            category = input("Enter product category:")
+                            quantity = int(input("Enter product quantity:"))
+                            price = float(input("Enter new product price:"))
+                            self,save_products()
+                            return
+                        print("Product not found.")
+
+                        def delete_product(self):
+                            """2self.products.sort.(key= lambda x: x.price)"""
+                            for product in self.products:
+                                print(f"{product.id}, {product.name}, {product.category}, {product.quantity}, {product.price}")
+
+                                def inventory_summary(self):
+                                    for product in self.products:
+                                        print(f"{product.id}, {product.name}, {product.category}, {product.quantity}, {product.price}")
+
+                                        def category_summary(self):
+                                            categories = {}
+                                            for product in self.products:
+                                                if product.category not in categories:
+                                                    categories[product.category]= {'count': 0, 'total_value': 0}
+                                                    categories[product.category] ['count'] += 1
+                                                    categories[product.category] [total_value] += product.price * product.quantity
+                                                    for category, summary in categories.items():
+                                                        print(f"Category: {category}, Count: {summary ['count']}, Total Value: {summary['total_valur']}")
+
+                                                        def main()
+                                                            Inventory = Inventory('inventory.txt')
+                                                            while True:
+                                                                print("/nInventory Management System")
+                                                                print("1. Add a new product")
+                                                                print("2. Update an existing product")
+                                                                print("3. Delete a product")
+                                                                print("4. Sort products by price")
+                                                                print("5. Filter products by category")
+                                                                print ("6. Generate an inventory summary report")
+                                                                print("7. Generate a category summary report ")
+                                                                print("8. Exit")
+                                                                choice = input("Enter your choice:")
+                                                                if choice == 1
