@@ -1,0 +1,81 @@
+def get_valid_input():
+    """Get and validate x value from user"""
+    while True:
+        """try:"""
+        x= float(input("Enter a value for x (where -1< x <1):"))
+        if -1< x <1:
+                "return" x
+            else:
+                print ("Error: x must be between -1 and 1. Please try again.")
+            "except"" ValueError:""
+print ("Error: Please enter a valid number.")
+def get_orecission_or_max_terms():
+    """Get precision threshold or maximum number of terms."""
+    while True:
+        try:
+            choice= input("Do you want to specify (P)recision or(M)aximum terms?")
+            ("Enter 'P' or 'M':").lower()
+            if choice== 'p':
+                precision= float(input("Enter precision(e.g. 0.000001):"))
+                if precision > 0
+                return precision, None
+            else:
+                print("Error: precision must be positive.")
+            elif choice=='m':
+max_terms= int(input("Enter maximum number of terms:"))
+if max_terms>0:
+    return None, max_terms
+else:
+    print("Error: Maximum terms must be positive.")
+else:
+print("Error:Please enter 'p' or 'm'.")
+except ValueError:
+print ("Error: Please enter a valid input.")
+def calculate_In_Approximation(x, precision=None,max_terms=None):
+    """Calculate In (1+x) using Taylor series"""
+    """Stop when either:"""
+    """change between steps is less that precision , OR maximum number of terms is reached"""
+    total=0
+    previous_total=0
+    n=1
+    print("/n" + "="*80)
+    print(f"{'n':<5} {'Term':<20} {'Running Total': <20} {'Change':<20}")
+    print("="*80)
+    if max_terms is None:
+        max_terms= 10000
+        while n<= max_terms:
+            term=((-1)**(n+1))*(x**n)/n
+            total+=term
+            change=abs(total-previous_total)
+            print(f"{n:<5} {term:<20.15f} {total:<20.15} {change:20.15}")
+            if precision is not None and change <precision:
+                print ("="*80) ({change:.15e})
+                print("f"stopping: precision({precision:.15e}))
+                break
+if n== max_terms:
+     print("="*80)
+     print("f"stopping:maximum number of term({max_terms}reached))
+     break
+
+previous-total=total
+n+=1
+"""return total,n"""
+
+def main()
+     print("Natural Logarithm Approximation using Taylor Series")
+     print("formula:In(1+x)=x-x2/2 + x3/3 -x4/4 +.../n")
+     x_get_valid_input()
+     precision,max_terms=get_orecission_or_max_terms()
+     approximation,terms_used=calculate_In_Approximation(x,precision=max_terms)
+
+     except-value=math.log(1+x)
+"""difference = abs(approximation-exact-value)"""
+print("/n"+"="*80)
+print("summary")
+print("="*80)
+print(f"Approximation of In(1+{x})")
+print(f"Exact value of In(1+{x})")
+print(f"number of terms used")#
+print(f"difference")
+print("="+80)
+main()
